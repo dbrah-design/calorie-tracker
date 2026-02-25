@@ -1,8 +1,57 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+ align-items: center;
+ /* Based on the design, I'm supposed to add here
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem; 
+  and 
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+  */
+  padding: 2.5em 1em;
+
+  /* Not sure why though. Going to use padding shortcut if needed
+    Update- I see it now. With the padding added here it's now looking like the design more with the title being pushed down more and the bottom card now not sticking to the bottom */
+}
+
+.header {
+  margin-bottom: 2.5em;
   text-align: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5em;
+  margin-bottom: .75em;
+}
+
+
+
+.flame-icon-style {
+  color: var(--primary-color);
+  width: 32px;
+  height: 32px;
+}
+
+.logo-name {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  /* These styles are for mobile. Later when adding media query for desktop the code will be this
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  */
+  color: var(--heading-color);
+  font-weight: 700;
+  
+}
+
+.title-subheading {
+  color: var(--secondary-color);
 }
 
 .card-one {

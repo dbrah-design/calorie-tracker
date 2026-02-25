@@ -25,7 +25,6 @@ font-family: "Inter", sans-serif;
   --primary-font : "Space Mono", monospace;
   --secondary-font: "Inter", sans-serif;
   
- 
 }
 
 *, :before, :after  {
@@ -37,6 +36,7 @@ font-family: "Inter", sans-serif;
 
 body {
   background-color: #F6F9F7;
+  font-family: var(--secondary-font);
 }
 
 
