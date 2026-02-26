@@ -15,7 +15,7 @@ function App() {
       </div>
       
 
-      <div>
+      <div className="cards-container">
         <div className="card-one">
 
           <div className="calorie-display">

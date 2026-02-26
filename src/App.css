@@ -54,14 +54,42 @@
   color: var(--secondary-color);
 }
 
+.cards-container {
+  max-width: 576px;
+}
+
 .card-one {
-  background-color: white;
-  padding: 4em;
+  background-color: #FFFFFF;
+  padding: 1em 1.5em;
+  /* Design had the bottom padding at 1.25rem and top padding at 1rem. For now going to have 1em for top and bottom and going to adjust as needed */
+  margin-bottom: 1.5em;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+
+  /* border-width: 1px;
+  border-color: #e5e7eb;
+  border-style: solid; */
 }
 
 .card-two {
-  background-color: rgb(204, 204, 204);
-  padding: 4em;
+  background-color: #FFFFFF;
+  padding: 1.5em;
+  /* In the design, the padding for card two was confusing so going with 1.5em all around for now */
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+
+}
+
+.calorie-display {
+  display: flex;
+  justify-content: space-between;
+  /* Going to use flexbox here for now but could also use grid here too, to get the calorie display side by side like the design */
+}
+
+.goal-calories {
+  text-align: center;
+  /* Could apply this to the other calorie displays so the text is centered. 
+  Could also make this a utility class and apply the utitlity class to the jsx   */
 }
 
 .border {
