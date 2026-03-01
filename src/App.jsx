@@ -18,13 +18,16 @@ function App() {
       <div className="cards-container">
         <div className="card-one">
 
+          
           <div className="calorie-display">
+
             <div className="goal-calories">
               <p>Goal</p>
               <h2>2,000</h2>
               <p>cal</p>
             </div>
-            <div className="consumed-calories">
+            
+            <div className="consumed-calories divide-border">
               <p>Consumed</p>
               <h2>0</h2>
               <p>cal</p>
