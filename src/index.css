@@ -39,4 +39,8 @@ body {
   font-family: var(--secondary-font);
 }
 
+.green {
+  color: var(--primary-color);
+}
+
 
