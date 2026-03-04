@@ -50,7 +50,7 @@ function App() {
             </div>
             <div className="goal-form">
               <input type="number" placeholder="Current: 2000 cal" className="goal-input-style" id="goal-input"/>
-              <button>Update Goal</button>
+              <button className="update-goal">Update Goal</button>
             </div>
             
           </div>

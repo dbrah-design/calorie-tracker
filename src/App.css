@@ -157,7 +157,7 @@
 }
 .goal-form {
   display: flex;
-  
+  gap: .75em;
 }
 .goal-input-style {
   font-size: .875rem;
@@ -171,7 +171,23 @@
   flex: 1;
 }
 
-/* Next I need to style the input and update button inside daily calorie goal div */
+.update-goal {
+  font-size: .875rem;
+  line-height: 1.25rem;
+  color: #FFFFFF;
+  padding: .5em 1em;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  height: 2.5rem;
+  border: none;
+  font-family: inherit;
+}
+
+.update-goal:hover {
+  cursor: pointer;
+}
+
+/* Next I need to style card two */
 /* Also I think I need to make .icon-flex h3 a class instead. This might be a pain to debug later when I start making separate components and making the css for the separate components  */
 
 .border {
