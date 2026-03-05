@@ -73,8 +73,8 @@
 
 .card-two {
   background-color: #FFFFFF;
-  padding: 1.5em;
-  /* In the design, the padding for card two was confusing so going with 1.5em all around for now */
+  /* padding: 1.5em; */
+  /* I had the padding here for card two at first but removed it because it was messing with the width of the border. The border wouldn't go across so I applied padding to the two containers of today's log and log food */
   border-radius: 12px;
   border: 1px solid #e5e7eb;
 
@@ -187,13 +187,35 @@
   cursor: pointer;
 }
 
+.default-message {
+  text-align: center;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  color: var(--secondary-color);
+}
+
 /* Next I need to style card two */
 /* Also I think I need to make .icon-flex h3 a class instead. This might be a pain to debug later when I start making separate components and making the css for the separate components  */
+
+.todays-log {
+  padding: 1.5em;
+}
+
+.log-food {
+  padding: 1.5em;
+}
 
 .border {
   margin-top: 1em;
   border: 1px solid #e5e7eb;
 }
+
+/* .border-two {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #e5e7eb;
+  
+} */
 
 
 
