@@ -3,18 +3,8 @@
  flex-direction: column;
  min-height: 100vh;
  align-items: center;
- /* Based on the design, I'm supposed to add here
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem; 
-  and 
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-  */
   padding: 2.5em 1em;
-
-  /* Not sure why though. Going to use padding shortcut if needed
-    Update- I see it now. With the padding added here it's now looking like the design more with the title being pushed down more and the bottom card now not sticking to the bottom */
+  /* Padding is added here so the title is being pushed down more and the bottom card is not sticking to the bottom */
 }
 
 .header {
@@ -47,6 +37,12 @@
   color: var(--heading-color);
   font-weight: 700;
   
+}
+
+
+.border {
+  margin-top: 1em;
+  border: 1px solid #e5e7eb;
 }
 
 .title-subheading {
@@ -178,7 +174,7 @@
   padding: .5em 1em;
   background-color: var(--primary-color);
   border-radius: 10px;
-  height: 2.5rem;
+  height: 40px;
   border: none;
   font-family: inherit;
 }
@@ -194,8 +190,12 @@
   color: var(--secondary-color);
 }
 
-/* Next I need to style card two */
+/* Next I need to fix the plus icon inside add food button so it's more aligned with add food text and after that style the list items that get added when the log food form is filled out */
 /* Also I think I need to make .icon-flex h3 a class instead. This might be a pain to debug later when I start making separate components and making the css for the separate components  */
+/* I think this piece of code will make it so when clicking inside input, the border will be green
+  .goal-input-style:focus-visible {
+  border-color: 1px solid var(--primary-color);
+} */
 
 .todays-log {
   padding: 1.5em;
@@ -205,18 +205,72 @@
   padding: 1.5em;
 }
 
-.border {
-  margin-top: 1em;
-  border: 1px solid #e5e7eb;
+.log-food-form {
+  display: flex;
+  flex-direction: column;
+  gap: .75em;
 }
 
-/* .border-two {
-  margin-top: 1em;
-  margin-bottom: 1em;
+.food-name-input {
+  padding: .6em .9em;
+  background-color: #F6F9F7;
   border: 1px solid #e5e7eb;
-  
-} */
+  border-radius: 10px;
+  flex: 1;
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
 
+.food-cal-input {
+  padding: .6em .9em;
+  background-color: #F6F9F7;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
 
+.add-food {
+  display: inline-flex;
+  justify-content: center;
+  align-self: center;
+  gap: .5em;
+  padding: .6em .9em;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  color: #FFFFFF;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  border: none;
+  font-family: inherit;
+  height: 40px;
+}
 
+.add-food:hover {
+  cursor: pointer;
+}
 
+.plus-icon {
+  width: 16px;
+  height: 16px;
+}
+
+@media(min-width: 600px) {
+  .log-food-form {
+    flex-direction: row;
+  }
+
+  .food-name-input {
+    font-size: .875rem;
+    line-height: 1.25rem;
+  }
+  .food-cal-input {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    width: 7em;
+  }
+}
