@@ -236,8 +236,7 @@
 
 .add-food {
   display: inline-flex;
-  justify-content: center;
-  align-self: center;
+  align-items: center;
   gap: .5em;
   padding: .6em .9em;
   font-size: .875rem;
