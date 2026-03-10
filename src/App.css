@@ -188,9 +188,12 @@
   font-size: .875rem;
   line-height: 1.25rem;
   color: var(--secondary-color);
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  /* Added some padding here and it looks similar to design when I do it this way. Need to play around with this some more to get it where I want it */
 }
 
-/* Next I need to fix the plus icon inside add food button so it's more aligned with add food text and after that style the list items that get added when the log food form is filled out */
+/* Next I need to fix the default message spacing and after that style the list items that get added when the log food form is filled out */
 /* Also I think I need to make .icon-flex h3 a class instead. This might be a pain to debug later when I start making separate components and making the css for the separate components  */
 /* I think this piece of code will make it so when clicking inside input, the border will be green
   .goal-input-style:focus-visible {
@@ -202,7 +205,7 @@
 }
 
 .log-food {
-  padding: 1.5em;
+  padding: 1em 1.5em;
 }
 
 .log-food-form {
