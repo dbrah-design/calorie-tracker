@@ -183,6 +183,25 @@
   cursor: pointer;
 }
 
+/* Next need to style the trash icon button in the list items and add some spacing between list items */
+/* Also I think I need to make .icon-flex h3 a class instead. This might be a pain to debug later when I start making separate components and making the css for the separate components  */
+/* I think this piece of code will make it so when clicking inside input, the border will be green
+  .goal-input-style:focus-visible {
+  border-color: 1px solid var(--primary-color);
+} */
+
+.todays-log {
+  padding: 1.5em;
+}
+/* Need to fix .icon-flex h3 in order for this to work. That is overriding this  */
+/* .todays-log-title {
+  font-size: 1rem;
+} */
+
+/* In the design across from the today's log their is supposed to be a count that lists how many items their are in the list. 
+For example 2 items would be shown across from it. 
+Not going to add that for yet. Going to keep it simple for now */
+
 .default-message {
   text-align: center;
   font-size: .875rem;
@@ -193,15 +212,34 @@
   /* Added some padding here and it looks similar to design when I do it this way. Need to play around with this some more to get it where I want it */
 }
 
-/* Next I need to fix the default message spacing and after that style the list items that get added when the log food form is filled out */
-/* Also I think I need to make .icon-flex h3 a class instead. This might be a pain to debug later when I start making separate components and making the css for the separate components  */
-/* I think this piece of code will make it so when clicking inside input, the border will be green
-  .goal-input-style:focus-visible {
-  border-color: 1px solid var(--primary-color);
-} */
+.list-container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-.todays-log {
-  padding: 1.5em;
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75em 1em;
+  background-color: #eaf0ed80;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.food-name {
+  color: var(--heading-color);
+  font-weight: 500;
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+
+.food-cal {
+  color: var(--secondary-color);
+  font-family: var(--primary-font);
+  font-size: .75rem;
+  line-height: 1rem;
 }
 
 .log-food {
