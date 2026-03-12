@@ -20,7 +20,6 @@
   margin-bottom: .75em;
 }
 
-
 .big-icon-style {
   color: var(--primary-color);
   width: 32px;
@@ -38,7 +37,6 @@
   font-weight: 700;
   
 }
-
 
 .border {
   border: 1px solid #e5e7eb;
@@ -65,11 +63,8 @@ for space if I decide to put the progress bar from the original design. The othe
 
 .card-two {
   background-color: #FFFFFF;
-  /* padding: 1.5em; */
-  /* I had the padding here for card two at first but removed it because it was messing with the width of the border. The border wouldn't go across so I applied padding to the two containers of today's log and log food */
   border-radius: 12px;
   border: 1px solid #e5e7eb;
-
 }
 
 .calorie-display {
@@ -173,9 +168,6 @@ for space if I decide to put the progress bar from the original design. The othe
   cursor: pointer;
 }
 
-/* Next need to remove the comments that I'm not going to use anymore 
-and put a reminder to style the hover styles on elements */
-
 /* I think this piece of code will make it so when clicking inside input, the border will be green
   .goal-input-style:focus-visible {
   border-color: 1px solid var(--primary-color);
@@ -201,7 +193,6 @@ Not going to add that for yet. Going to keep it simple for now */
   color: var(--secondary-color);
   padding-top: 1.5em;
   padding-bottom: 1.5em;
-  /* Added some padding here and it looks similar to design when I do it this way. Need to play around with this some more to get it where I want it */
 }
 
 .list-container {
@@ -307,6 +298,12 @@ Not going to add that for yet. Going to keep it simple for now */
 }
 
 @media(min-width: 600px) {
+
+  .logo-name {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
   .log-food-form {
     flex-direction: row;
   }
@@ -320,4 +317,7 @@ Not going to add that for yet. Going to keep it simple for now */
     line-height: 1.25rem;
     width: 7em;
   }
+  
 }
+
+/* Remember to style the hover elememnts later on */
