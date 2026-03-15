@@ -6,13 +6,22 @@ function App() {
   const [goalCalories, setGoalCalories] = useState(2000); 
     // When rendering this in JSX, using toLocaleString method to insert comma where needed and to make a string. For calculations though keep it as a number
   const [goalInput,setGoalInput] = useState('');
+
+  // toLocaleString does not work with strings only numbers. I have to convert the string from the goal input into a number
+  
   function handleGoalInput(e) {
-    setGoalInput(e.target.value);
+    setGoalInput(+e.target.value);
+    // I used the unary plus operator here to convert the string into a number. This will also help in using this number
+      // for the calculations to get the remaining calories
   }
+
   function updateGoal() {
     setGoalCalories(goalInput)
   }
-  
+
+  // Going to make a separate function to format all the numbers into strings with commas using toLocaleString()
+  // Next need to get the inputs for the food name, food calories and the add food button to work 
+
   return (
     <>
       <div className="header">
