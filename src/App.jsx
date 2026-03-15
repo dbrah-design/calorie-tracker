@@ -8,10 +8,8 @@ function App() {
   const [goalValue,setGoalValue] = useState('');
   const [foodNameValue, setFoodNameValue] = useState('');
   const [foodCalValue, setFoodCalValue] = useState('');
+  const [foodList,setFoodList] = useState([]);
 
-  
-  
-  
   function handleGoalInput(e) {
     setGoalValue(+e.target.value);
     // toLocaleString does not work with strings only numbers. I have to convert the string from the goal input into a number
@@ -24,7 +22,7 @@ function App() {
   }
 
   // Going to make a separate function to format all the numbers into strings with commas using toLocaleString()
-  // Next need to get the inputs for the food name, food calories and the add food button to work 
+  // Next need to get the food list to work. Going to start by getting the inputs to to go into a foodList state, which will be a object. Console.log the result first, then starting working on getting the list to render on the page
 
   function handleFoodNameInput(e) {
     setFoodNameValue(e.target.value);
@@ -35,8 +33,18 @@ function App() {
   }
 
   function addFood() {
-    console.log(foodNameValue);
-    console.log(foodCalValue);
+    const newFoodItem = {
+      id: crypto.randomUUID(),
+      name: foodNameValue,
+      calories: foodCalValue
+    }
+
+    const updatedFoodList = [...foodList, newFoodItem]
+    setFoodList(updatedFoodList)
+    console.log(updatedFoodList);
+    
+    setFoodNameValue('');
+    setFoodCalValue('');
   }
 
   
