@@ -5,22 +5,25 @@ function App() {
 
   const [goalCalories, setGoalCalories] = useState(2000); 
     // When rendering this in JSX, using toLocaleString method to insert comma where needed and to make a string. For calculations though keep it as a number
-  const [goalInput,setGoalInput] = useState('');
-
-  // toLocaleString does not work with strings only numbers. I have to convert the string from the goal input into a number
+  const [goalValue,setGoalValue] = useState('');
+  // const [foodNameValue, setfoodNameValue]
+  
   
   function handleGoalInput(e) {
-    setGoalInput(+e.target.value);
+    setGoalValue(+e.target.value);
+    // toLocaleString does not work with strings only numbers. I have to convert the string from the goal input into a number
     // I used the unary plus operator here to convert the string into a number. This will also help in using this number
       // for the calculations to get the remaining calories
   }
 
   function updateGoal() {
-    setGoalCalories(goalInput)
+    setGoalCalories(goalValue)
   }
 
   // Going to make a separate function to format all the numbers into strings with commas using toLocaleString()
   // Next need to get the inputs for the food name, food calories and the add food button to work 
+
+  
 
   return (
     <>
@@ -69,7 +72,7 @@ function App() {
               <h3 className="subheading">Daily Calorie Goal</h3>
             </div>
             <div className="goal-form">
-              <input type="number" placeholder="Current: 2000 cal" className="goal-input-style" value={goalInput} onChange={handleGoalInput} id="goal-input"/>
+              <input type="number" placeholder="Current: 2000 cal" className="goal-input-style" value={goalValue} onChange={handleGoalInput} id="goal-input"/>
               <button className="update-goal" onClick={updateGoal}>Update Goal</button>
             </div>
             
