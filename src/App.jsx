@@ -6,7 +6,10 @@ function App() {
   const [goalCalories, setGoalCalories] = useState(2000); 
     // When rendering this in JSX, using toLocaleString method to insert comma where needed and to make a string. For calculations though keep it as a number
   const [goalValue,setGoalValue] = useState('');
-  // const [foodNameValue, setfoodNameValue]
+  const [foodNameValue, setFoodNameValue] = useState('');
+  const [foodCalValue, setFoodCalValue] = useState('');
+
+  
   
   
   function handleGoalInput(e) {
@@ -22,6 +25,19 @@ function App() {
 
   // Going to make a separate function to format all the numbers into strings with commas using toLocaleString()
   // Next need to get the inputs for the food name, food calories and the add food button to work 
+
+  function handleFoodNameInput(e) {
+    setFoodNameValue(e.target.value);
+  }
+
+  function handleFoodCalInput(e) {
+    setFoodCalValue(+e.target.value);
+  }
+
+  function addFood() {
+    console.log(foodNameValue);
+    console.log(foodCalValue);
+  }
 
   
 
@@ -125,9 +141,9 @@ function App() {
 
             <div className="log-food-form">
               
-              <input type="text" placeholder="Food name" className="food-name-input"/>
-              <input type="number" placeholder="Calories" className="food-cal-input"/>
-              <button className="add-food">
+              <input type="text" placeholder="Food name" className="food-name-input" value={foodNameValue} onChange={handleFoodNameInput}/>
+              <input type="number" placeholder="Calories" className="food-cal-input" value={foodCalValue} onChange={handleFoodCalInput}/>
+              <button className="add-food" onClick={addFood}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus-icon lucide-plus plus-icon"><path d="M5 12h14"/><path d="M12 5v14"/>
                 </svg>
                 Add Food
