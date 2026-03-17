@@ -113,29 +113,24 @@ function App() {
               <h3 className="subheading">Today's Log</h3>
             </div>
             
+             {foodList.length === 0 && (
              <p className="default-message">No food logged yet. Start adding meals below</p> 
-             {/* The list below will be made using map depending on the state. The class names will be used here from this code.
-             Just using map here to create a list item every time the user adds a food*/}
-            {
-                // <ul className="list-container">
-                //   <li className="list-item">
-                //     <div>
-                //       <p className="food-name">Tuna</p>
-                //       <p className="food-cal">100 cal</p>
-                //     </div>
-                //     <button className="delete-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trash2-icon lucide-trash-2 trash-icon-size"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
-                //   </li>
-                //   <li className="list-item">
-                //     <div>
-                //       <p className="food-name">Tuna</p>
-                //       <p className="food-cal">100 cal</p>
-                //     </div>
-                //     <button className="delete-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trash2-icon lucide-trash-2 trash-icon-size"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
-                //   </li>
-                // </ul>
-            }
-            
-
+             )}
+              
+             {foodList.length > 0 && (
+                <ul>
+                  {foodList.map((foodItem) => (
+                    <li className="list-item" key={foodItem.id}>
+                      <div>
+                        <p className="food-name">{foodItem.name}</p>
+                        <p className="food-cal">{foodItem.calories} cal</p>
+                      </div>
+                      <button className="delete-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trash2-icon lucide-trash-2 trash-icon-size"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+             
           </div>
 
            <div className="border" ></div>
