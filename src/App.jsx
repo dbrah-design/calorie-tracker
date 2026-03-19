@@ -9,6 +9,25 @@ function App() {
   const [foodNameValue, setFoodNameValue] = useState('');
   const [foodCalValue, setFoodCalValue] = useState('');
   const [foodList,setFoodList] = useState([]);
+  // Hard coded this at first to test out the reduce method out before using the foodList state object
+    // const testObject = [{
+    //   name: "Chicken",
+    //   calories: 200
+    // }
+    //   ,{
+    //     name: "Chicken",
+    //     calories: 100
+    //   }, {
+    //     name: "Chicken",
+    //     calories: 300
+    //   }
+    // ];
+
+  const totalConsumedCalories = foodList.reduce((sum, foodItem) => {
+    return sum + foodItem.calories;
+  },0);
+
+  console.log(totalConsumedCalories);
 
   function handleGoalInput(e) {
     setGoalValue(+e.target.value);
@@ -22,7 +41,8 @@ function App() {
   }
 
   // Going to make a separate function to format all the numbers into strings with commas using toLocaleString()
-  // Next need to get the delete button to work for the food list item
+  // Going to need to fix spacing around consumed calories box. It's too cramped
+  // Next need to make a state that will be the number of total food calories logged. The state will be the total of all the calories logged in the food list object. For example newFoodItem.calories + newFoodItem.calories etc. The result of this calculation will be displayed in the consumed calories box. I think I have to use reduce in this case to add multiple numbers in an array. Going to have to do more research though
 
   function handleFoodNameInput(e) {
     setFoodNameValue(e.target.value);
@@ -81,7 +101,7 @@ function App() {
             
             <div className="consumed-calories divide-border">
               <p className='display-style'>Consumed</p>
-              <h2 className='cal-number-style'>0</h2>
+              <h2 className='cal-number-style'>{totalConsumedCalories.toLocaleString()}</h2>
               <p className="cal-style">cal</p>
             </div>
 
