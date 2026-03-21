@@ -29,6 +29,8 @@ function App() {
 
   console.log(totalConsumedCalories);
 
+  const totalRemainingCalories = goalCalories - totalConsumedCalories;
+
   function handleGoalInput(e) {
     setGoalValue(+e.target.value);
     // toLocaleString does not work with strings only numbers. I have to convert the string from the goal input into a number
@@ -42,7 +44,7 @@ function App() {
 
   // Going to make a separate function to format all the numbers into strings with commas using toLocaleString()
   // Going to need to fix spacing around consumed calories box. It's too cramped
-  // Next need to make a state that will be the number of total food calories logged. The state will be the total of all the calories logged in the food list object. For example newFoodItem.calories + newFoodItem.calories etc. The result of this calculation will be displayed in the consumed calories box. I think I have to use reduce in this case to add multiple numbers in an array. Going to have to do more research though
+  // Next need to make a variable that will calculate the goal calories minus the total consumed calories equals the total remaining calories and display it
 
   function handleFoodNameInput(e) {
     setFoodNameValue(e.target.value);
@@ -73,7 +75,6 @@ function App() {
   }
 
   
-
   return (
     <>
       <div className="header">
@@ -107,7 +108,7 @@ function App() {
 
             <div className="remaining">
               <p className='display-style'>Remaining</p>
-              <h2 className='cal-number-style green'>2,000</h2>
+              <h2 className='cal-number-style green'>{totalRemainingCalories.toLocaleString()}</h2>
               <p className='cal-style'>cal</p>
             </div>
             
@@ -158,30 +159,28 @@ function App() {
              
           </div>
 
-           <div className="border" ></div>
+           <div className="border"></div>
 
-           <div className="log-food">
+            <div className="log-food">
 
-            <div className='icon-flex'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-apple-icon lucide-apple small-icon-style"><path d="M12 6.528V3a1 1 0 0 1 1-1h0"/><path d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21"/></svg>
-              <h3 className="subheading">Log Food</h3>
+              <div className='icon-flex'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-apple-icon lucide-apple small-icon-style"><path d="M12 6.528V3a1 1 0 0 1 1-1h0"/><path d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21"/></svg>
+                <h3 className="subheading">Log Food</h3>
+              </div>
+
+              <div className="log-food-form">
+                
+                <input type="text" placeholder="Food name" className="food-name-input" value={foodNameValue} onChange={handleFoodNameInput}/>
+                <input type="number" placeholder="Calories" className="food-cal-input" value={foodCalValue} onChange={handleFoodCalInput}/>
+                <button className="add-food" onClick={addFood}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus-icon lucide-plus plus-icon"><path d="M5 12h14"/><path d="M12 5v14"/>
+                  </svg>
+                  Add Food
+                </button>
+
+              </div>
+
             </div>
-
-            <div className="log-food-form">
-              
-              <input type="text" placeholder="Food name" className="food-name-input" value={foodNameValue} onChange={handleFoodNameInput}/>
-              <input type="number" placeholder="Calories" className="food-cal-input" value={foodCalValue} onChange={handleFoodCalInput}/>
-              <button className="add-food" onClick={addFood}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus-icon lucide-plus plus-icon"><path d="M5 12h14"/><path d="M12 5v14"/>
-                </svg>
-                Add Food
-              </button>
-
-            </div>
-
-            
-            
-           </div>
 
         </div>
       </div>
