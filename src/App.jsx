@@ -33,7 +33,6 @@ function App() {
 
   function handleGoalInput(e) {
     setGoalValue(+e.target.value);
-    // toLocaleString does not work with strings only numbers. I have to convert the string from the goal input into a number
     // I used the unary plus operator here to convert the string into a number. This will also help in using this number
       // for the calculations to get the remaining calories
   }
@@ -42,10 +41,13 @@ function App() {
     setGoalCalories(goalValue)
   }
 
+  function formatNumber(number) {
+    return number.toLocaleString();
+  }
+
   // Going to make a separate function to format all the numbers into strings with commas using toLocaleString()
   // Going to need to fix spacing around consumed calories box. It's too cramped
-  // Next need to make a variable that will calculate the goal calories minus the total consumed calories equals the total remaining calories and display it
-
+  
   function handleFoodNameInput(e) {
     setFoodNameValue(e.target.value);
   }
@@ -63,8 +65,7 @@ function App() {
 
     const updatedFoodList = [...foodList, newFoodItem]
     setFoodList(updatedFoodList)
-    console.log(updatedFoodList);
-    
+  
     setFoodNameValue('');
     setFoodCalValue('');
   }
@@ -87,28 +88,26 @@ function App() {
 
       </div>
       
-
       <div className="cards-container">
         <div className="card-one">
 
-          
           <div className="calorie-display">
 
             <div className="goal-calories">
               <p className='display-style'>Goal</p>
-              <h2 className='cal-number-style'>{goalCalories.toLocaleString()}</h2>
+              <h2 className='cal-number-style'>{formatNumber(goalCalories)}</h2>
               <p className='cal-style'>cal</p>
             </div>
             
             <div className="consumed-calories divide-border">
               <p className='display-style'>Consumed</p>
-              <h2 className='cal-number-style'>{totalConsumedCalories.toLocaleString()}</h2>
+              <h2 className='cal-number-style'>{formatNumber(totalConsumedCalories)}</h2>
               <p className="cal-style">cal</p>
             </div>
 
             <div className="remaining">
               <p className='display-style'>Remaining</p>
-              <h2 className='cal-number-style green'>{totalRemainingCalories.toLocaleString()}</h2>
+              <h2 className='cal-number-style green'>{formatNumber(totalRemainingCalories)}</h2>
               <p className='cal-style'>cal</p>
             </div>
             
