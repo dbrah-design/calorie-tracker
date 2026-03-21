@@ -27,8 +27,6 @@ function App() {
     return sum + foodItem.calories;
   },0);
 
-  console.log(totalConsumedCalories);
-
   const totalRemainingCalories = goalCalories - totalConsumedCalories;
 
   function handleGoalInput(e) {
@@ -45,7 +43,6 @@ function App() {
     return number.toLocaleString();
   }
 
-  // Going to make a separate function to format all the numbers into strings with commas using toLocaleString()
   // Going to need to fix spacing around consumed calories box. It's too cramped
   
   function handleFoodNameInput(e) {
