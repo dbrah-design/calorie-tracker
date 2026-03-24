@@ -167,6 +167,7 @@ for space if I decide to put the progress bar from the original design. The othe
 
 .update-goal:hover {
   cursor: pointer;
+  background-color: #2BAB6FE6;
 }
 
 /* I think this piece of code will make it so when clicking inside input, the border will be green
@@ -291,6 +292,7 @@ Not going to add that for yet. Going to keep it simple for now */
 
 .add-food:hover {
   cursor: pointer;
+  background-color: #2BAB6FE6;
 }
 
 .plus-icon {
