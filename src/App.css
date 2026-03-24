@@ -42,9 +42,6 @@
   border: 1px solid #e5e7eb;
 }
 
-/* Might add separate classes for the border above daily calorie goal and the one above log food. The one above daily calorie goal will be used 
-for space if I decide to put the progress bar from the original design. The other border will be used to create space if needed */
-
 .title-subheading {
   color: var(--secondary-color);
 }
@@ -153,6 +150,11 @@ for space if I decide to put the progress bar from the original design. The othe
   flex: 1;
 }
 
+.goal-input-style:focus-visible {
+  outline: 2px solid #2bab6f; /* A solid green ring */
+  outline-offset: 2px; /* A small gap between the input and the ring */
+}
+
 .update-goal {
   font-size: .875rem;
   line-height: 1.25rem;
@@ -169,11 +171,6 @@ for space if I decide to put the progress bar from the original design. The othe
   cursor: pointer;
   background-color: #2BAB6FE6;
 }
-
-/* I think this piece of code will make it so when clicking inside input, the border will be green
-  .goal-input-style:focus-visible {
-  border-color: 1px solid var(--primary-color);
-} */
 
 .todays-log {
   padding: 1.5em;
@@ -264,6 +261,11 @@ Not going to add that for yet. Going to keep it simple for now */
   line-height: 1.5rem;
 }
 
+.food-name-input:focus-visible {
+  outline: 2px solid #2bab6f; /* A solid green ring */
+  outline-offset: 2px; /* A small gap between the input and the ring */
+}
+
 .food-cal-input {
   padding: .6em .9em;
   background-color: #F6F9F7;
@@ -273,6 +275,11 @@ Not going to add that for yet. Going to keep it simple for now */
   height: 40px;
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.food-cal-input:focus-visible {
+  outline: 2px solid #2bab6f; /* A solid green ring */
+  outline-offset: 2px; /* A small gap between the input and the ring */
 }
 
 .add-food {
@@ -322,5 +329,3 @@ Not going to add that for yet. Going to keep it simple for now */
   }
   
 }
-
-/* Remember to style the hover elememnts later on */
