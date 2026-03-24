@@ -68,15 +68,13 @@ for space if I decide to put the progress bar from the original design. The othe
 }
 
 .calorie-display {
-  display: flex;
-  justify-content: space-around;
-  /* Going to use flexbox here for now but could also use grid here too, to get the calorie display side by side like the design */
-  /* display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr)); */
-  /* I think I figured out how get it to stick to top. I have to put padding on the individual divs of the calorie display and not put padding on the
-  card itself. When I put padding on the card itself, it's causing the calorie display div to push down. For now going to do this but see if I can find a better solution */
-  /* Could trying using display grid like the code above and keep padding the same in each individual div. That might fix spacing not looking exact
-  to design */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+   /* Decided to go with grid here instead like design. The spacing around the elements and the gap between the elements looks better this way */
+  /* Here is the flexbox code I had before grid. Could still use it if I have any issues with the grid layout
+    display: flex;
+    justify-content: space-around; 
+  */
 }
 
 .goal-calories, .consumed-calories,.remaining {
@@ -97,13 +95,16 @@ for space if I decide to put the progress bar from the original design. The othe
   font-size: .75rem;
   line-height: 1rem;
   color: var(--secondary-color);
-  margin-bottom: .25em;
 }
 
 .cal-number-style {
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-family: var(--primary-font);
+}
+
+.display-style, .cal-number-style {
+  margin-bottom: .14em;
 }
 
 .cal-style{
