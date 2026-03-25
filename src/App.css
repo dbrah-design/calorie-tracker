@@ -90,8 +90,8 @@
 }
 
 .cal-number-style {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: var(--primary-font);
 }
 
@@ -302,6 +302,11 @@ Not going to add that for yet. Going to keep it simple for now */
   .logo-name {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .cal-number-style {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .log-food-form {
