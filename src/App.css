@@ -29,13 +29,8 @@
 .logo-name {
   font-size: 1.875rem;
   line-height: 2.25rem;
-  /* These styles are for mobile. Later when adding media query for desktop the code will be this
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  */
   color: var(--heading-color);
   font-weight: 700;
-  
 }
 
 .border {
@@ -175,11 +170,6 @@
 .todays-log {
   padding: 1.5em;
 }
-
-/* Fixed .icon-flex h3 so now this should work if I decided to make this title bigger */
-/* .todays-log-title {
-  font-size: 1rem;
-} */
 
 /* In the design across from the today's log their is supposed to be a count that lists how many items their are in the list. 
 For example 2 items would be shown across from it. 

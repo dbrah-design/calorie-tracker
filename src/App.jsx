@@ -43,8 +43,6 @@ function App() {
     return number.toLocaleString();
   }
 
-  // Going to need to fix spacing around consumed calories box. It's too cramped
-  
   function handleFoodNameInput(e) {
     setFoodNameValue(e.target.value);
   }
@@ -109,6 +107,8 @@ function App() {
             </div>
             
           </div>
+          
+          {/* If I decided to add the progress bar, it would go somewhere around here */}
 
           <div className="border" ></div>
 
