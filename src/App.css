@@ -274,6 +274,7 @@ Not going to add that for yet. Going to keep it simple for now */
 
 .add-food {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: .5em;
   padding: .6em .9em;
