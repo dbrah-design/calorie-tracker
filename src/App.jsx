@@ -30,13 +30,14 @@ function App() {
   const totalRemainingCalories = goalCalories - totalConsumedCalories;
 
   function handleGoalInput(e) {
-    setGoalValue(+e.target.value);
-    // I used the unary plus operator here to convert the string into a number. This will also help in using this number
-      // for the calculations to get the remaining calories
+    setGoalValue(e.target.value);
+    // Removed unary plus operator here because was causing an issue when user is backspacing, a zero would stay and was not able to remove
   }
 
   function updateGoal() {
-    setGoalCalories(goalValue)
+    setGoalCalories(Number(goalValue));
+    // Conversion of value string to number is now happening here instead of in input. Using Number instead
+    setGoalValue('');
   }
 
   function formatNumber(number) {
@@ -48,14 +49,15 @@ function App() {
   }
 
   function handleFoodCalInput(e) {
-    setFoodCalValue(+e.target.value);
+    setFoodCalValue(e.target.value);
+    // Removed unary plus operator here because was causing an issue when user is backspacing, a zero would stay and was not able to remove
   }
 
   function addFood() {
     const newFoodItem = {
       id: crypto.randomUUID(),
       name: foodNameValue,
-      calories: foodCalValue
+      calories: Number(foodCalValue) // Conversion of value string to number is now happening here instead of in input. Using Number instead
     }
 
     const updatedFoodList = [...foodList, newFoodItem]
